@@ -15,6 +15,7 @@ public class ScopedValueExample {
     }
 
     private void nestedCall() {
+
         System.out.println("Nested user: " + ScopedContext.USER.get());
     }
 }

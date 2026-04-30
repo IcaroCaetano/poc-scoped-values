@@ -13,6 +13,7 @@ public class ThreadLocalExample {
     }
 
     private void process() {
+
         System.out.println("Processing for user: " + USER.get());
     }
 }
