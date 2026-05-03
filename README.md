@@ -90,6 +90,7 @@ public class ScopedContext {
 
     public static final ScopedValue<String> USER = ScopedValue.newInstance();
 }
+
 ```
 
 ### 2️⃣ Business Service
@@ -104,4 +105,7 @@ public class BusinessService {
         System.out.println("Processing for user: " + user);
     }
 }
+
 ```
+
+### 3️⃣ ScopedValue Example
