@@ -50,3 +50,9 @@ ThreadLocal has several issues in modern concurrency models:
 
 - ❌ Mutable state → prone to subtle bugs
 
+
+With the introduction of Virtual Threads, the execution model changed significantly. Creating thousands (or millions) of lightweight threads makes ThreadLocal inefficient and dangerous if misused.
+
+
+👉 `ScopedValue` was introduced to provide a safe, predictable, and structured way to propagate contextual data.
+
