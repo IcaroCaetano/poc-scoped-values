@@ -164,3 +164,5 @@ public class ScopedWithVirtualThreads {
 }
 
 ```
+
+### 5️⃣ ThreadLocal Example (Pitfall)
