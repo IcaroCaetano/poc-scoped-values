@@ -11,6 +11,8 @@ By the end of this project, you will understand:
 
 The concept of ScopedValue
 
+
+
 - Why it was created
 
 - Differences compared to ThreadLocal
@@ -32,3 +34,19 @@ Unlike ThreadLocal, the value:
 - Does not leak across executions
 
 - Is inherently safe for concurrent use
+
+
+## 🤔 Why was this feature created?
+
+ThreadLocal has several issues in modern concurrency models:
+
+- ❌ Risk of memory leaks
+
+- ❌ Hard lifecycle management
+
+- ❌ Problems with thread pools
+
+- ❌ Poor fit for Virtual Threads
+
+- ❌ Mutable state → prone to subtle bugs
+
