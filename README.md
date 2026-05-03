@@ -76,3 +76,18 @@ com.example.scoped
  ├── ScopedValueExample.java
  └── ScopedWithVirtualThreads.java
 ```
+
+
+### 1️⃣ Scoped Context
+
+
+```
+package com.example.scoped;
+
+import java.lang.ScopedValue;
+
+public class ScopedContext {
+
+    public static final ScopedValue<String> USER = ScopedValue.newInstance();
+}
+```
