@@ -109,3 +109,26 @@ public class BusinessService {
 ```
 
 ### 3️⃣ ScopedValue Example
+
+```
+package com.example.scoped;
+
+import java.lang.ScopedValue;
+
+public class ScopedValueExample {
+
+    private final BusinessService service = new BusinessService();
+
+    public void run() {
+        ScopedValue.where(ScopedContext.USER, "icaro")
+                .run(() -> {
+                    service.process();
+                    nestedCall();
+                });
+    }
+
+    private void nestedCall() {
+        System.out.println("Nested user: " + ScopedContext.USER.get());
+    }
+}
+```
