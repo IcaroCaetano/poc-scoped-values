@@ -64,3 +64,5 @@ Lifecycle Manual Automatic
 Memory leaks Possible Avoided
 Virtual Threads Problematic Designed for it
 Safety Low High
+
+## 🏗️ Project Structure
