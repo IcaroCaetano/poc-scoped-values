@@ -66,3 +66,13 @@ Virtual Threads Problematic Designed for it
 Safety Low High
 
 ## 🏗️ Project Structure
+
+```
+com.example.scoped
+ ├── Main.java
+ ├── ScopedContext.java
+ ├── BusinessService.java
+ ├── ThreadLocalExample.java
+ ├── ScopedValueExample.java
+ └── ScopedWithVirtualThreads.java
+```
