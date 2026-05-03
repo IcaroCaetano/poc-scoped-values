@@ -91,3 +91,17 @@ public class ScopedContext {
     public static final ScopedValue<String> USER = ScopedValue.newInstance();
 }
 ```
+
+### 2️⃣ Business Service
+
+```
+package com.example.scoped;
+
+public class BusinessService {
+
+    public void process() {
+        String user = ScopedContext.USER.get();
+        System.out.println("Processing for user: " + user);
+    }
+}
+```
