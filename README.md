@@ -206,3 +206,23 @@ executor.submit(() -> {
 ```
 
 ## 🚀 Main Class
+
+```
+package com.example.scoped;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        System.out.println("=== ScopedValue ===");
+        new ScopedValueExample().run();
+
+        System.out.println("\n=== Virtual Threads + ScopedValue ===");
+        new ScopedWithVirtualThreads().run();
+
+        System.out.println("\n=== ThreadLocal (problem) ===");
+        new ThreadLocalExample().run();
+    }
+}
+
+```
