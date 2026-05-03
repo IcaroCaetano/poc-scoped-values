@@ -228,3 +228,15 @@ public class Main {
 ```
 
 ### 💡 Key Insight
+
+ScopedValue is not a direct replacement for ThreadLocal.
+
+Use ScopedValue when:
+
+You need immutable contextual data
+
+You want safe propagation across layers
+
+You are using Virtual Threads
+
+You want to avoid concurrency bugs
