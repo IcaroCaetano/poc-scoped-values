@@ -131,4 +131,7 @@ public class ScopedValueExample {
         System.out.println("Nested user: " + ScopedContext.USER.get());
     }
 }
+
 ```
+
+### 4️⃣ ScopedValue with Virtual Threads
