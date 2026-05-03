@@ -166,3 +166,27 @@ public class ScopedWithVirtualThreads {
 ```
 
 ### 5️⃣ ThreadLocal Example (Pitfall)
+
+```
+
+package com.example.scoped;
+
+public class ThreadLocalExample {
+
+    private static final ThreadLocal<String> USER = new ThreadLocal<>();
+
+    public void run() {
+        USER.set("icaro");
+
+        process();
+
+        // Common bug: forgot to clean up
+        // USER.remove();
+    }
+
+    private void process() {
+        System.out.println("Processing for user: " + USER.get());
+    }
+}
+
+```
