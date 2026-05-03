@@ -190,3 +190,16 @@ public class ThreadLocalExample {
 }
 
 ```
+
+### ⚠️ Real Problem with ThreadLocal
+
+```
+executor.submit(() -> {
+    USER.set("user-1");
+    process();
+});
+
+executor.submit(() -> {
+    process(); // may accidentally reuse user-1 😱
+});
+```
