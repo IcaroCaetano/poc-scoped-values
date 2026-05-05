@@ -253,11 +253,14 @@ To go deeper:
 
 Combine with:
 
-Virtual Threads
-Structured Concurrency
-Logging/Tracing (observability)
+- Virtual Threads
+- Structured Concurrency
+- Logging/Tracing (observability)
 
-🧨 Final Thought
+### 🧨 Final Thought
+
 If you ignore immutability, you lose the main benefit of this feature.
+
 ScopedValue is not about “storing data”.
+
 👉 It is about modeling context in a safe, structured, and predictable way
