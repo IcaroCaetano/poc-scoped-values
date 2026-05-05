@@ -239,4 +239,25 @@ You want safe propagation across layers
 
 You are using Virtual Threads
 
-You want to avoid concurrency bugs
+You want to avoid concurrency bugs Ideas)
+
+### 🧪 Next Steps (Advanced POC Ideas)
+
+To go deeper:
+
+- Implement a RequestContext (e.g., correlationId, userId)
+
+- Simulate an API flow (Controller → Service → Repository)
+
+- Propagate context across layers
+
+Combine with:
+
+Virtual Threads
+Structured Concurrency
+Logging/Tracing (observability)
+
+🧨 Final Thought
+If you ignore immutability, you lose the main benefit of this feature.
+ScopedValue is not about “storing data”.
+👉 It is about modeling context in a safe, structured, and predictable way
