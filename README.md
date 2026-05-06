@@ -57,13 +57,13 @@ With the introduction of Virtual Threads, the execution model changed significan
 👉 `ScopedValue` was introduced to provide a safe, predictable, and structured way to propagate contextual data.
 
 ⚖️ ScopedValue vs ThreadLocal
-Feature      ThreadLocal ScopedValue
-Mutability.  Mutable       Immutable
-Scope.       Entire thread Explicit block scope
-Lifecycle.   Manual.    Automatic
-Memory leaks Possible.  Avoided
-Virtual Threads Problematic Designed for it
-Safety Low High
+Feature         ThreadLocal                        ScopedValue
+Mutability.     Mutable                            Immutable
+Scope.          Entire thread                      Explicit block scope
+Lifecycle.      Manual.                            Automatic
+Memory leaks    Possible.                          Avoided
+Virtual Threads Problematic                        Designed for it
+Safety          Low                                High
 
 ## 🏗️ Project Structure
 
