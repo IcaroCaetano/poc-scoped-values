@@ -236,13 +236,13 @@ ScopedValue is not a direct replacement for ThreadLocal.
 
 Use ScopedValue when:
 
-You need immutable contextual data
+- You need immutable contextual data
 
-You want safe propagation across layers
+- You want safe propagation across layers
 
-You are using Virtual Threads
+- You are using Virtual Threads
 
-You want to avoid concurrency bugs Ideas)
+- You want to avoid concurrency bugs Ideas)
 
 ### 🧪 Next Steps (Advanced POC Ideas)
 
