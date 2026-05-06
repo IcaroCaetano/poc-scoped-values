@@ -8,7 +8,6 @@ public final class ScopedContext {
             ScopedValue.newInstance();
 
     public static RequestContext get() {
-
         return CONTEXT.get();
     }
 }

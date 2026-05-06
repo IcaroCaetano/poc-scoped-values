@@ -7,6 +7,6 @@ public class UserRepository {
     public void findUser() {
         var ctx = ScopedContext.get();
 
-        System.out.println("[Repository] Fetching user " + ctx.userId());
+        System.out.println("[Repository] correlationId=" + ctx.correlationId());
     }
 }
