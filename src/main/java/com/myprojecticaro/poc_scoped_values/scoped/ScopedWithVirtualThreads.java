@@ -5,6 +5,8 @@ import java.util.concurrent.Executors;
 public class ScopedWithVirtualThreads {
 
     public void run() throws InterruptedException {
+        System.out.println("ScopedWithVirtualThreads Start");
+
         try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 
             executor.submit(() ->
@@ -21,5 +23,7 @@ public class ScopedWithVirtualThreads {
                     })
             );
         }
+
+        System.out.println("ScopedWithVirtualThreads End");
     }
 }
