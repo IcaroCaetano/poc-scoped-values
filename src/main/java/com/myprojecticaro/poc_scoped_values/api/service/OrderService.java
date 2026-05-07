@@ -10,10 +10,8 @@ public class OrderService {
     private final OrderRepository repository = new OrderRepository();
 
     public void processOrder() {
-        var ctx = ScopedContext.get();
+        var correlationId = repository.findOrder();
 
-        System.out.println("[Service] correlationId=" + ctx.correlationId());
-
-        repository.findOrder();
+        System.out.println("[Service] correlationId=" + correlationId);
     }
 }

@@ -12,6 +12,6 @@ public class OrderController {
     @GetMapping("/orders")
     public String getOrder() {
         service.processOrder();
-        return "ok";
+        return "Success";
     }
 }
