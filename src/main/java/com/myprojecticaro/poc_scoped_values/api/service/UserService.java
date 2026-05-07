@@ -10,10 +10,8 @@ public class UserService {
     private final UserRepository repository = new UserRepository();
 
     public void process() {
-        var ctx = ScopedContext.get();
+        var userId =  repository.findUser();
 
-        System.out.println("[Service] userId=" + ctx.userId());
-
-        repository.findUser();
+        System.out.println("[Service] userId=" + userId);
     }
 }

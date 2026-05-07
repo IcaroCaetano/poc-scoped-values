@@ -4,9 +4,10 @@ import com.myprojecticaro.poc_scoped_values.api.context.ScopedContext;
 
 public class UserRepository {
 
-    public void findUser() {
+    public String findUser() {
         var ctx = ScopedContext.get();
-
         System.out.println("[Repository] correlationId=" + ctx.correlationId());
+
+        return ctx.userId();
     }
 }

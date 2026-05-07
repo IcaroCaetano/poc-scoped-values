@@ -12,6 +12,6 @@ public class UserController {
     @GetMapping("/users")
     public String getUser() {
         userService.process();
-        return "ok";
+        return "Success";
     }
 }
