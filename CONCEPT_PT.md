@@ -96,3 +96,20 @@ USER → "icaro"
 #### 2️ .run()
 
 Ativa esse binding DURANTE a execução do lambda.
+
+
+##  public static final ScopedValue<T> CONTEXT = ScopedValue.newInstance();
+
+### 📌 Conceitualmente
+
+Você está criando algo equivalente a:
+
+"um identificador lógico de contexto"
+
+o estado é:
+
+CONTEXT
+↓
+sem binding
+
+O identificador somente tera valor quando for realizado o binding contextual dentro do .where
