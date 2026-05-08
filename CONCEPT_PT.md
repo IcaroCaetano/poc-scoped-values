@@ -104,7 +104,7 @@ Ativa esse binding DURANTE a execução do lambda.
 
 Você está criando algo equivalente a:
 
-"um identificador lógico de contexto"
+"um identificador lógico de contexto para bindings futuros"
 
 o estado é:
 

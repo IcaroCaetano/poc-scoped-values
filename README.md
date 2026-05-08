@@ -81,7 +81,7 @@ com.example.scoped
 ```
 
 
-### 1️⃣ Scoped Context
+### 1 Scoped Context
 
 
 ```
@@ -96,7 +96,7 @@ public class ScopedContext {
 
 ```
 
-### 2️⃣ Business Service
+### 2️ Business Service
 
 ```
 package com.example.scoped;
@@ -111,7 +111,7 @@ public class BusinessService {
 
 ```
 
-### 3️⃣ ScopedValue Example
+### 3️ ScopedValue Example
 
 ```
 package com.example.scoped;
@@ -137,7 +137,7 @@ public class ScopedValueExample {
 
 ```
 
-### 4️⃣ ScopedValue with Virtual Threads
+### 4️ ScopedValue with Virtual Threads
 
 ```
 package com.example.scoped;
@@ -168,7 +168,7 @@ public class ScopedWithVirtualThreads {
 
 ```
 
-### 5️⃣ ThreadLocal Example (Pitfall)
+### 5️ ThreadLocal Example (Pitfall)
 
 ```
 
@@ -194,7 +194,7 @@ public class ThreadLocalExample {
 
 ```
 
-### ⚠️ Real Problem with ThreadLocal
+### Real Problem with ThreadLocal
 
 ```
 executor.submit(() -> {
