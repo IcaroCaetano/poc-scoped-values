@@ -27,7 +27,8 @@ public class ScopedValueFilter extends OncePerRequestFilter {
 
         RequestContext context = new RequestContext(userId, correlationId);
 
-        ScopedValue.where(ScopedContext.CONTEXT, context)
+        ScopedValue
+                .where(ScopedContext.CONTEXT, context)
                 .run(() -> {
                     try {
                         filterChain.doFilter(request, response);
