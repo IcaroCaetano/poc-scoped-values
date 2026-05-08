@@ -83,3 +83,16 @@ ScopedValue.where(USER, "icaro")
 👉 criando um binding contextual IMUTÁVEL e TEMPORÁRIO.
 
 
+## 🧠 O que o .run() faz?
+
+executa um bloco de código dentro do escopo contextual criado pelo .where().
+
+#### 1️ .where()
+
+Prepara o binding:
+
+USER → "icaro"
+
+#### 2️ .run()
+
+Ativa esse binding DURANTE a execução do lambda.
