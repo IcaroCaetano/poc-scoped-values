@@ -113,3 +113,6 @@ CONTEXT
 sem binding
 
 O identificador somente tera valor quando for realizado o binding contextual dentro do .where
+
+
+## Scoped com troca de Threads
