@@ -116,3 +116,5 @@ O identificador somente tera valor quando for realizado o binding contextual den
 
 
 ## Scoped com troca de Threads
+
+### classes e razão de scoped Threads usar threads filhas
