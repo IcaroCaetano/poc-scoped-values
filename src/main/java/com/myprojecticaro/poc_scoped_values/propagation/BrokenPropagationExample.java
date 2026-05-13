@@ -1,4 +1,4 @@
-package com.myprojecticaro.poc_scoped_values.propagation.util;
+package com.myprojecticaro.poc_scoped_values.propagation;
 
 import java.util.concurrent.CompletableFuture;
 
