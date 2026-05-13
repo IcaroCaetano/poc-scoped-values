@@ -1,7 +1,5 @@
 package com.myprojecticaro.poc_scoped_values.propagation.util;
 
-import com.example.virtualthreads.util.ContextLogger;
-
 import java.util.concurrent.CompletableFuture;
 
 public class BrokenPropagationExample {
