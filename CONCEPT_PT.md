@@ -118,3 +118,26 @@ O identificador somente tera valor quando for realizado o binding contextual den
 ## Scoped com troca de Threads
 
 ### classes e razão de scoped Threads usar threads filhas
+
+ThreadLocal quebra conceitualmente.
+
+*Porque:
+
+contexto não pertence mais à thread
+thread virou detalhe de implementação
+
+### 🧠 A teoria moderna
+
+O contexto pertence:
+
+````
+à EXECUÇÃO
+````
+e não à thread.
+
+O ScopedValue continua funcionando
+
+Porque:
+
+ele acompanha a Virtual Thread
+não a Platform Thread
