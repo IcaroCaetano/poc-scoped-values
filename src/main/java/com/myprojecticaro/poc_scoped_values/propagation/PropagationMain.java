@@ -22,17 +22,13 @@ public class PropagationMain {
 
             try {
 
-                new StructuredPropagationExample()
-                        .execute();
+                new StructuredPropagationExample().execute();
 
-                new ManualPropagationExample()
-                        .execute();
+                new ManualPropagationExample().execute();
 
-                new ThreadSwitchingExperiment()
-                        .execute();
+                new ThreadSwitchingExperiment().execute();
 
-                new BrokenPropagationExample()
-                        .execute();
+                new BrokenPropagationExample().execute();
 
             } catch (Exception e) {
 
