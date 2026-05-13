@@ -11,8 +11,7 @@ public class ManualPropagationExample {
 
     public void execute() {
 
-        RequestContext context =
-                ScopedRequestContext.get();
+        RequestContext context = ScopedRequestContext.get();
 
         CompletableFuture.runAsync(() -> {
 
