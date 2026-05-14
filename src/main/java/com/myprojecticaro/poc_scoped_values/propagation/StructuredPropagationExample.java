@@ -58,8 +58,7 @@ public class StructuredPropagationExample {
             // - em outra Virtual Thread
             // - em outro carrier thread
             //
-            // Mesmo assim:
-            // o contexto continuará disponível.
+            // Mesmo assim o contexto continuará disponível.
             scope.fork(() -> {
 
                 ContextLogger.info("Child task B");
@@ -67,6 +66,10 @@ public class StructuredPropagationExample {
                 return null;
             });
 
+            // Aguarda TODAS as subtasks terminarem.
+            // Sem isso o metodo poderia continuar antes das child tasks completarem.
+            //
+            // join() sincroniza
             scope.join();
         }
 

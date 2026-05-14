@@ -6,12 +6,12 @@ public class BrokenPropagationExample {
 
     public void execute() {
 
-        ContextLogger.info("BrokenPropagationExample - Parent task");
+        ContextLogger.info("BrokenPropagationExample - Parent task started");
 
         CompletableFuture.runAsync(() -> {
 
             // provavelmente falhará
-            ContextLogger.info("Async task");
+            ContextLogger.info("Async Broken task");
 
         }).join();
     }
