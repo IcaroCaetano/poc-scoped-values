@@ -8,8 +8,42 @@ public class StructuredPropagationExample {
 
         ContextLogger.info("StructuredPropagationExample: Parent task started");
 
+        // Cria um StructuredTaskScope.
+        //
+        // Isso representa um ESCOPO ESTRUTURADO de concorrência.
+        //
+        // Conceitualmente:
+        //
+        // Parent Task
+        //    ├── Child Task A
+        //    └── Child Task B
+        //
+        // IMPORTANTÍSSIMO:
+        //
+        // O execution context atual
+        // (incluindo ScopedValues)
+        // será herdado pelas subtasks.
+        //
+        // O try-with-resources garante:
+        // - fechamento automático
+        // - cleanup do escopo
+        // - finalização estruturada
         try (var scope = StructuredTaskScope.open()) {
 
+            // Cria uma subtask concorrente.
+            //
+            // scope.fork():
+            //
+            // - cria uma task filha
+            // - normalmente em uma Virtual Thread
+            // - associada ao MESMO execution scope
+            //
+            // DIFERENÇA CRÍTICA:
+            //
+            // Isso NÃO é uma async task "solta".
+            //
+            // Ela pertence à hierarquia estruturada
+            // do escopo atual.
             scope.fork(() -> {
 
                 ContextLogger.info("Child task A");
@@ -17,6 +51,15 @@ public class StructuredPropagationExample {
                 return null;
             });
 
+            // Cria outra subtask concorrente.
+            //
+            // Esta task pode executar:
+            // - em paralelo
+            // - em outra Virtual Thread
+            // - em outro carrier thread
+            //
+            // Mesmo assim:
+            // o contexto continuará disponível.
             scope.fork(() -> {
 
                 ContextLogger.info("Child task B");
