@@ -6,7 +6,7 @@ public class BrokenPropagationExample {
 
     public void execute() {
 
-        ContextLogger.info("Parent task");
+        ContextLogger.info("BrokenPropagationExample - Parent task");
 
         CompletableFuture.runAsync(() -> {
 
