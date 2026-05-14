@@ -13,6 +13,8 @@ public class ManualPropagationExample {
 
         RequestContext context = ScopedRequestContext.get();
 
+        ContextLogger.info("ManualPropagationExamples started");
+
         CompletableFuture.runAsync(() -> {
 
             ScopedValue.where(
@@ -25,5 +27,7 @@ public class ManualPropagationExample {
             });
 
         }).join();
+
+        ContextLogger.info("ManualPropagationExamples Ended");
     }
 }

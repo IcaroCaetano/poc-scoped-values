@@ -6,7 +6,7 @@ public class StructuredPropagationExample {
 
     public void execute() throws Exception {
 
-        ContextLogger.info("Parent task started");
+        ContextLogger.info("StructuredPropagationExample: Parent task started");
 
         try (var scope = StructuredTaskScope.open()) {
 
@@ -27,6 +27,6 @@ public class StructuredPropagationExample {
             scope.join();
         }
 
-        ContextLogger.info("Parent task completed");
+        ContextLogger.info("StructuredPropagationExample: Parent task completed");
     }
 }
