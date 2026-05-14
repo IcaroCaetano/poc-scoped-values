@@ -4,7 +4,7 @@ public class ThreadSwitchingExperiment {
 
     public void execute() {
 
-        ContextLogger.info("Before thread switch");
+        ContextLogger.info("ThreadSwitchingExperiment: Before thread switch");
 
         Thread.startVirtualThread(() -> {
 
@@ -12,6 +12,6 @@ public class ThreadSwitchingExperiment {
 
         });
 
-        ContextLogger.info("After thread switch");
+        ContextLogger.info("ThreadSwitchingExperiment: After thread switch");
     }
 }
