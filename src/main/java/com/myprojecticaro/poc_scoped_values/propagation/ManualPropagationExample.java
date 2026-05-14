@@ -20,8 +20,7 @@ public class ManualPropagationExample {
 
         ContextLogger.info("ManualPropagationExamples started");
 
-        // Cria uma tarefa assíncrona usando CompletableFuture.
-        // Isso cria um NOVO async boundary.
+        // Cria uma tarefa assíncrona usando CompletableFuture. Isso cria um NOVO async boundary.
         //
         // Normalmente o ScopedValue NÃO é propagado automaticamente para cá.
         //
@@ -29,8 +28,6 @@ public class ManualPropagationExample {
         CompletableFuture.runAsync(() -> {
 
                     // Cria um NOVO binding contextual dentro da task assíncrona.
-                    //
-                    // Estamos reaplicando manualmente o contexto capturado anteriormente.
                     //
                     // Sem isso:
                     // ScopedRequestContext.get()
@@ -50,21 +47,12 @@ public class ManualPropagationExample {
                     ).run(() -> {
 
                         // Executa o bloco dentro do novo binding contextual.
-                        //
                         // Agora o contexto volta a existir dentro da execução async.
-                        //
-                        // O logger conseguirá acessar:
-                        // - userId
-                        // - correlationId
-                        // - etc
                         ContextLogger.info("Async propagated task");
 
                     });
 
-                    // Quando o .run() termina:
-                    //
-                    // o binding contextual é removido
-                    // automaticamente.
+                    // Quando o .run() termina o binding contextual é removido automaticamente.
                     //
                     // Isso evita:
                     // - vazamento de contexto
@@ -73,11 +61,8 @@ public class ManualPropagationExample {
 
                 })
 
-                // Espera a execução async terminar.
-                //
-                // Sem o join():
-                // o método poderia finalizar antes
-                // da task assíncrona completar.
+                // Espera a execução async terminar. Sem o join() o método poderia finalizar antes
+                //  da task assíncrona completar.
                 .join();
 
         // Executa novamente no escopo original.
