@@ -8,21 +8,8 @@ public class StructuredPropagationExample {
 
         ContextLogger.info("StructuredPropagationExample: Parent task started");
 
-        // Cria um StructuredTaskScope.
-        //
-        // Isso representa um ESCOPO ESTRUTURADO de concorrência.
-        //
-        // Conceitualmente:
-        //
-        // Parent Task
-        //    ├── Child Task A
-        //    └── Child Task B
-        //
-        // IMPORTANTÍSSIMO:
-        //
-        // O execution context atual
-        // (incluindo ScopedValues)
-        // será herdado pelas subtasks.
+        // Isso representa um escopo estrutura de concorrência. O execution context atual
+        // (incluindo ScopedValues) será herdado pelas subtasks.
         //
         // O try-with-resources garante:
         // - fechamento automático
@@ -31,19 +18,9 @@ public class StructuredPropagationExample {
         try (var scope = StructuredTaskScope.open()) {
 
             // Cria uma subtask concorrente.
-            //
-            // scope.fork():
-            //
             // - cria uma task filha
             // - normalmente em uma Virtual Thread
             // - associada ao MESMO execution scope
-            //
-            // DIFERENÇA CRÍTICA:
-            //
-            // Isso NÃO é uma async task "solta".
-            //
-            // Ela pertence à hierarquia estruturada
-            // do escopo atual.
             scope.fork(() -> {
 
                 ContextLogger.info("Child task A");
@@ -75,4 +52,13 @@ public class StructuredPropagationExample {
 
         ContextLogger.info("StructuredPropagationExample: Parent task completed");
     }
+
+
+    /*
+        Saida:
+        [userId=icaro] [correlationId=c8bc8198-47f0-46c0-8fc0-c081eeae3b1a] [thread=Thread[#3,main,5,main]] StructuredPropagationExample: Parent task started
+        [userId=icaro] [correlationId=c8bc8198-47f0-46c0-8fc0-c081eeae3b1a] [thread=VirtualThread[#32]/runnable@ForkJoinPool-1-worker-1] Child task A
+        [userId=icaro] [correlationId=c8bc8198-47f0-46c0-8fc0-c081eeae3b1a] [thread=VirtualThread[#34]/runnable@ForkJoinPool-1-worker-3] Child task B
+        [userId=icaro] [correlationId=c8bc8198-47f0-46c0-8fc0-c081eeae3b1a] [thread=Thread[#3,main,5,main]] StructuredPropagationExample: Parent task completed
+     */
 }

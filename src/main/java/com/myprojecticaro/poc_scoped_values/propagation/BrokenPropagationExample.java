@@ -14,5 +14,7 @@ public class BrokenPropagationExample {
             ContextLogger.info("Async Broken task");
 
         }).join();
+
+        ContextLogger.info("BrokenPropagationExample - Parent task ended");
     }
 }

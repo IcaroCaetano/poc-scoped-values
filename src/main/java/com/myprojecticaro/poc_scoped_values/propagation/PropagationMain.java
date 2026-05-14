@@ -28,7 +28,7 @@ public class PropagationMain {
 
                 new ThreadSwitchingExperiment().execute();
 
-                new BrokenPropagationExample().execute();
+                //new BrokenPropagationExample().execute();
 
             } catch (Exception e) {
 
