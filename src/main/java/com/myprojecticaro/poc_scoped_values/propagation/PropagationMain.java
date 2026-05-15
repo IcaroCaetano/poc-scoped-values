@@ -35,5 +35,11 @@ public class PropagationMain {
                 e.printStackTrace();
             }
         });
+
+        /*
+            [userId=icaro] [correlationId=ba5784ad-382e-4865-bfad-de0774543dc8] [thread=Thread[#3,main,5,main]] ManualPropagationExamples started
+            [userId=icaro] [correlationId=ba5784ad-382e-4865-bfad-de0774543dc8] [thread=Thread[#34,ForkJoinPool.commonPool-worker-1,5,InnocuousForkJoinWorkerThreadGroup]] Async propagated task
+            [userId=icaro] [correlationId=ba5784ad-382e-4865-bfad-de0774543dc8] [thread=Thread[#3,main,5,main]] ManualPropagationExamples Ended
+         */
     }
 }
