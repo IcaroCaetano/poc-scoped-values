@@ -11,6 +11,8 @@ public class ManualPropagationExample {
 
     public void execute() {
 
+        ContextLogger.info("ManualPropagationExamples started");
+
         // Obtém o contexto atual que está bindado no ScopedValue da execução atual.
         // Aqui estamos "capturando" o contexto da thread/escopo atual para reutilizar depois.
         //
@@ -18,7 +20,7 @@ public class ManualPropagationExample {
         // Sem isso, a task async perderia o contexto.
         RequestContext context = ScopedRequestContext.get();
 
-        ContextLogger.info("ManualPropagationExamples started");
+        ContextLogger.info("ManualPropagationExamples started2");
 
         // Cria uma tarefa assíncrona usando CompletableFuture. Isso cria um NOVO async boundary.
         //
@@ -27,27 +29,14 @@ public class ManualPropagationExample {
         // O código abaixo será executado em outra thread, geralmente do ForkJoinPool.commonPool.
         CompletableFuture.runAsync(() -> {
 
-                    // Cria um NOVO binding contextual dentro da task assíncrona.
-                    //
-                    // Sem isso:
-                    // ScopedRequestContext.get()
-                    // lançaria:
-                    //
-                    // NoSuchElementException:
-                    // ScopedValue not bound
                     ScopedValue.where(
-
-                            // Chave contextual (ScopedValue)
                             ScopedRequestContext.CONTEXT,
-
-                            // Valor/contexto que será associado
                             // temporariamente ao ScopedValue
                             context
 
                     ).run(() -> {
 
                         // Executa o bloco dentro do novo binding contextual.
-                        // Agora o contexto volta a existir dentro da execução async.
                         ContextLogger.info("Async propagated task");
 
                     });
